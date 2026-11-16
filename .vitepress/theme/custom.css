@@ -1,0 +1,157 @@
+/* Lecture confortable sur telephone, le soir. */
+:root {
+  --vp-c-brand-1: #e8590c;
+  --vp-c-brand-2: #f76707;
+  --vp-c-brand-3: #fd7e14;
+  --ch-ok: #2f9e44;
+  --ch-ko: #e03131;
+}
+.dark {
+  --vp-c-brand-1: #ff922b;
+  --vp-c-brand-2: #ffa94d;
+  --vp-c-brand-3: #ffc078;
+  --ch-ok: #69db7c;
+  --ch-ko: #ff8787;
+}
+
+@media (max-width: 640px) {
+  .vp-doc {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .vp-doc div[class*="language-"] {
+    font-size: 13px;
+  }
+}
+
+.vp-doc .play-link {
+  margin-top: -8px;
+  text-align: right;
+  font-size: 14px;
+}
+
+/* ---------- Challenge ---------- */
+.challenge {
+  margin: 24px 0;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+.challenge.solved {
+  border-color: var(--ch-ok);
+}
+.ch-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.ch-title {
+  font-weight: 700;
+  margin-right: auto;
+}
+.ch-badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.ch-badge.facile { color: var(--ch-ok); }
+.ch-badge.moyen { color: #f08c00; }
+.ch-badge.difficile { color: var(--ch-ko); }
+.ch-badge.done { color: var(--ch-ok); font-weight: 600; }
+
+.ch-editor {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--vp-font-family-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-code-block-bg);
+  color: var(--vp-c-text-1);
+  resize: vertical;
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+}
+.ch-editor:focus {
+  outline: 2px solid var(--vp-c-brand-1);
+}
+.ch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.ch-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: var(--vp-c-text-1) !important;
+}
+.ch-btn.primary {
+  background: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  color: #fff !important;
+}
+.ch-btn:disabled { opacity: 0.6; }
+.ch-fatal {
+  color: var(--ch-ko);
+  font-family: var(--vp-font-family-mono);
+  font-size: 13px;
+}
+.ch-summary { font-weight: 700; color: var(--ch-ko); }
+.ch-summary.ok { color: var(--ch-ok); }
+.ch-case {
+  font-size: 13px;
+  padding: 6px 10px;
+  margin: 6px 0;
+  border-left: 3px solid var(--ch-ko);
+  background: var(--vp-c-bg);
+  border-radius: 4px;
+  word-break: break-all;
+}
+.ch-case.ok { border-left-color: var(--ch-ok); }
+.ch-case summary { cursor: pointer; }
+.ch-error { color: var(--ch-ko); font-family: var(--vp-font-family-mono); }
+
+/* ---------- Progress ---------- */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--vp-c-divider);
+  overflow: hidden;
+}
+.progress-bar > div {
+  height: 100%;
+  background: var(--ch-ok);
+  transition: width 0.4s;
+}
+
+.ch-solution pre {
+  margin: 12px 0 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--vp-code-block-bg);
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
+}
